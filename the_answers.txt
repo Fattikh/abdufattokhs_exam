@@ -17,3 +17,18 @@
         example: print(bool("smth")) #True
                  print(bool(0)) #False
                  print(7==57) #False
+
+2. There are 3 logical operators:
+    *And - returns True if all statements are true.
+        Example: print(bool(5==5 and 7>5)) #True
+        print(bool(75!=5 and 5>9)) #False
+
+    *Or - Returns True if one of the statements is true.
+        example: print(bool(7>=7 or 5!=5)) #True
+
+    *Not - Reverse the result, returns False if the result is true.
+        example:
+        x = 5
+        print(not(x > 3 and x < 10)) #False
+
+
