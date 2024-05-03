@@ -65,5 +65,15 @@ first_student=student("Abdufattokh", "TIF")
 print(first_student.name)
 
 
+5. How does inheritance work in Python? Give an example demonstrating single and multiple inheritance.
+There are 4 principles of OOP in python:
+    1) Inheritance
+    2)encapsulation
+    3) Polymorphism
+    4) Abstraction
+The Inheritance principe in python - for some object we can take inheritance from other object. it means that you can
+takes all his data.
+
+
 
 

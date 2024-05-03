@@ -23,3 +23,20 @@ class student:
         self.faculty = faculty
 first_student=student("Abdufattokh", "TIF")
 print(first_student.name)
+
+'''
+example for the 5th question:
+'''
+class Parent1():
+    pass
+class Parent2():
+    def __init__(self):
+        print("Parent2")
+class Child(Parent1, Parent2):
+    def __init__(self):
+        super().__init__()
+        print("Child")
+        
+instance = Child()
+print(isinstance(instance, Parent1))
+print(isinstance(instance, Parent2))
