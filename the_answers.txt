@@ -1,0 +1,19 @@
+1. There are 8 data types in python:
+    1) Integers (int) - All numbers which are whole.
+        for example: 8, 757, 82, 100, etс.
+    2) Floating points (float) - these are decimal numbers.
+        example: 8.5, 9.1, 4.0 etc.
+    3)Strings (str) - All symbols, latters or other charakters. And it wrtites inthe "".
+        example: "I am Abdufattokh", "Bye Bye!", "50000", "hggfdkgjfsaueguwfyi" etc.
+    4)Lists (list) - they are mutable (changeable) ordered sequence of elements.
+        example: example_list = [5, "Hello", "World", "400"].
+    5)Dictionaries (dict) - they are unordered that takes key and theirs values {key:value}.
+        example: tuits_student={ "name" : "Jackson", "age":20, "faculty":"Telecommunication and technologies"}.
+    6) Tuples (tup) - immutable ordered sequence of elements.
+        example: ("first", 45, "this is Ilon").
+    7) Sets (set) - unordered UNIQUE OBJECTS.
+        example: {"smth_1","smth_2", "end"}.
+    8) Booleans (bool) - logical value indicating True or False
+        example: print(bool("smth")) #True
+                 print(bool(0)) #False
+                 print(7==57) #False
