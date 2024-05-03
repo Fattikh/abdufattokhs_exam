@@ -1,42 +1,32 @@
-import  requests
-import bs4
-import lxml
+import requests
+from bs4 import BeautifulSoup
 
 
-class Scrapper:
-    def __init__(self, *args, **kwargs):
-        ...
+def scrape_title():
+    # Задаем URL, на который будем отправлять запрос
+    url = f'https://tribuna.uz/'
 
-    def get_title(self):
-        url = f"https://tribuna.uz/"
+    # Отправляем GET-запрос на указанный URL и сохраняем ответ
+    response = requests.get(url)
 
-        response = requests.get(url)
+    # Проверяем успешность запроса
+    if response.status_code == 200:
+        # Создаем объект BeautifulSoup для парсинга HTML
+        soup = BeautifulSoup(response.text, 'html.parser')
 
-        soup = bs4.BeautifulSoup(response.content, 'html.parser')
+        # Находим все элементы с классом, содержащим информацию о товаре (название и цена)
+        titles = soup.find_all("div", class_='header-menu')
 
-        # body > main > section > div > div > div.col-lg-9.col-md-12 > div.row.custom-gutter.mb-40
+        # Проходимся по каждому товару и извлекаем название и цену
+        for title in titles:
+            # Получаем название товара
+            name = title.find('li').text.strip()
 
-        news = soup.find_all("li", class_="dropdown")
-        f = open("test.txt", 'w')
+            # Получаем цену товара
+            price = title.find("li", class_="dropdown").text.strip()
+            print(f"Title: {name}", f"Price: {price}")
 
-
-        for product in p:
-            # image_linkroducts = product.find("div", attrs={"class": "product__item-img"}).find("img")['data-src']
-            title = product.find("span", attrs={"class": "product__item__info-title"}).text
-            f.write(title)
-            price = product.find("span", attrs={"class": "product__item-price"}).text
-            f.write(price)
-            image_link = product.find("img", attrs={"class": "img-fluid"})['data-src']
-            is_sale = product.find("span", attrs={"class": "pr_flash pr_discount"})
-
-            if is_sale:
-                is_sale = True
-            else:
-                is_sale = False
+            scrapper = scrape_title()
+            scrapper.get_products()
 
 
-            print(f"Title: {title}", f"Price: {price}", f"Image: {image_link}", f"Is Sale: {is_sale}", sep="\n")
-
-
-scrapper = AsaxiyScrapper()
-scrapper.get_products("iphone")
