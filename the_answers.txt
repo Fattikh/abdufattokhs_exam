@@ -48,5 +48,22 @@ git push origin main  -  добавляет в GitHub все исходные д
 git clone https://github.com/Fattikh/abdufattokhs_exam.git - cloning from github repository to the local (to your computer).
 git init - Create an empty Git repository or reinitialize an existing one.
 
+4. class in python like maket of some objects.
+and it has its own methods. methods are the functions that came in classes.
+and the method __init__ is like construction.
+Это место, где обычно устанавливаются начальные значения атрибутов класса.
+
+Example:
+1)class exampleClass:
+    def __init__(self):
+        ...
+2) class student:
+    def __init__(self, name, faculty):
+        self.name = name
+        self.faculty = faculty
+first_student=student("Abdufattokh", "TIF")
+print(first_student.name)
+
+
 
 
